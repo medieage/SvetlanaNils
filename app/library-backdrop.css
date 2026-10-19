@@ -1,0 +1,97 @@
+.library-backdrop { display: none; }
+
+@media screen and (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+  body { isolation: isolate; }
+  .library-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    contain: strict;
+  }
+  .library-backdrop__light {
+    position: absolute;
+    width: 550px;
+    height: 850px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #bf90431a, #8d633d09 45%, transparent 72%);
+  }
+  .library-backdrop__light--left { left: -340px; top: 10%; }
+  .library-backdrop__light--right { right: -320px; bottom: -8%; background: radial-gradient(ellipse, #9b4b3320, #b9924e09 45%, transparent 72%); }
+  .library-backdrop__grain {
+    position: absolute;
+    inset: 0;
+    opacity: .16;
+    background-image: radial-gradient(#cfb18133 .5px, transparent .7px);
+    background-size: 5px 7px;
+    mask-image: linear-gradient(to right, #000, transparent 32%, transparent 68%, #000);
+  }
+  .library-backdrop__pages, .library-backdrop__feather {
+    position: absolute;
+    color: #c7a776;
+    opacity: .17;
+    width: clamp(145px, 13vw, 235px);
+  }
+  .library-backdrop__pages {
+    left: clamp(-115px, calc((100vw - 1700px) / 2), 25px);
+    top: 21%;
+    transform: perspective(900px) rotateY(20deg) rotateZ(-12deg);
+  }
+  .library-backdrop__feather {
+    right: clamp(-90px, calc((100vw - 1700px) / 2), 30px);
+    bottom: 6%;
+    transform: perspective(900px) rotateY(-18deg) rotateZ(16deg);
+  }
+  .library-backdrop__motes { position: absolute; inset: 0; }
+  .library-backdrop__motes i {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #d4b47b;
+    box-shadow: 0 0 9px #c7a77655;
+    opacity: 0;
+  }
+  .library-backdrop__motes i:nth-child(1) { left: 3%; top: 25%; animation-delay: -2s; }
+  .library-backdrop__motes i:nth-child(2) { left: 8%; top: 63%; animation-delay: -7s; }
+  .library-backdrop__motes i:nth-child(3) { left: 5%; top: 86%; animation-delay: -12s; }
+  .library-backdrop__motes i:nth-child(4) { left: 12%; top: 43%; animation-delay: -4s; }
+  .library-backdrop__motes i:nth-child(5) { left: 2%; top: 52%; animation-delay: -10s; }
+  .library-backdrop__motes i:nth-child(6) { right: 4%; top: 18%; animation-delay: -8s; }
+  .library-backdrop__motes i:nth-child(7) { right: 9%; top: 40%; animation-delay: -1s; }
+  .library-backdrop__motes i:nth-child(8) { right: 6%; top: 72%; animation-delay: -11s; }
+  .library-backdrop__motes i:nth-child(9) { right: 2%; top: 89%; animation-delay: -5s; }
+  .library-backdrop__motes i:nth-child(10) { right: 13%; top: 58%; animation-delay: -3s; }
+}
+
+@media screen and (min-width: 1100px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .library-backdrop__light { animation: bookshelf-glow 18s ease-in-out 3; }
+  .library-backdrop__light--right { animation-delay: -9s; }
+  .library-backdrop__pages { animation: manuscript-drift 20s ease-in-out 3; }
+  .library-backdrop__feather { animation: manuscript-drift 24s ease-in-out 3 reverse; }
+  .library-backdrop__motes i { animation-name: margin-motes; animation-duration: 16s; animation-timing-function: ease-in-out; animation-iteration-count: 3; }
+}
+
+@keyframes bookshelf-glow {
+  0%, 100% { opacity: .65; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-25px); }
+}
+@keyframes manuscript-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -18px; }
+}
+@keyframes margin-motes {
+  0%, 100% { opacity: 0; transform: translate3d(0, 10px, 0); }
+  25%, 60% { opacity: .45; }
+  90% { opacity: 0; transform: translate3d(10px, -80px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .library-backdrop__motes { display: none; }
+}
+@media (forced-colors: active), print {
+  .library-backdrop { display: none; }
+}

@@ -1,0 +1,159 @@
+/* Self-hosted Cyrillic-capable fonts; Fontsource uses font-display: swap. */
+:root {
+  --font-body: 'Rubik Variable', system-ui, sans-serif;
+  --font-display: 'Lora Variable', Georgia, serif;
+  --muted: #b3afa5;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  font-synthesis: none;
+}
+
+h1, h2, h3, .brand > span, .hero-sub, .lead, .ribbon {
+  font-family: var(--font-display);
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 5.1vw, 4.625rem);
+  line-height: 1.16;
+  letter-spacing: -.035em;
+  margin-block: 1.75rem 1.25rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+
+h3 { line-height: 1.35; letter-spacing: -.015em; }
+em { font-weight: inherit; }
+p { line-height: 1.8; text-wrap: pretty; }
+.hero-sub { font-size: clamp(1.25rem, 2.1vw, 1.625rem); line-height: 1.5; }
+.lead { font-size: 1.375rem; line-height: 1.65; }
+
+.intro, .about-grid p:not(.lead), .mentor-copy > p,
+.section-heading > p, .business p, .course-copy p,
+.mode-description, .steps p, .contact p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-grid p, .mentor-copy p, .mode-description { max-width: 62ch; }
+.mentor-copy > .muted { font-size: .875rem; color: var(--muted); }
+.mode-description { min-height: 5.5rem; }
+.hero-note, .price-note, .pricing-note {
+  font-size: .8125rem;
+  line-height: 1.65;
+  color: #aaa69b;
+}
+.hero-note { max-width: 42ch; }
+.price-note { min-height: 2.7em; }
+.price-card p { font-size: .9375rem; line-height: 1.7; min-height: 3.4em; }
+.mentor-card p { font-size: .9375rem; line-height: 1.8; }
+
+.eyebrow, .section-label, .mentor-card .eyebrow, .business .eyebrow,
+.contact .section-label {
+  font-size: .6875rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: .14em;
+}
+.portrait-caption { font-size: .6875rem; line-height: 1.7; letter-spacing: .13em; }
+.scroll-hint, .hero-index { font-size: .625rem; letter-spacing: .12em; }
+
+.brand > span { font-size: 1.25rem; font-weight: 500; }
+.brand small, footer .brand small {
+  font-family: var(--font-body);
+  font-size: .625rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: .22em;
+}
+nav { gap: 1.125rem; font-size: .8125rem; line-height: 1.5; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.soon { color: #aaa69b; }
+.soon small { font-size: .6875rem; letter-spacing: .03em; }
+.button, .outline {
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  min-height: 48px;
+}
+.button { gap: 1.25rem; }
+.button span { flex-shrink: 0; }
+.text-link, .community { font-size: .875rem; line-height: 1.65; }
+.business-prices > div { gap: 1rem; align-items: baseline; font-size: .9375rem; }
+.business-prices strong { white-space: nowrap; }
+.price, .mentor-price, .business-prices strong {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -.035em;
+}
+.price { font-size: clamp(1.625rem, 2.6vw, 2.125rem); line-height: 1.35; }
+.mentor-price { font-size: 2.75rem; line-height: 1.3; }
+.business-prices strong { font-size: 1.375rem; }
+.segmented { max-width: 100%; }
+.segmented button {
+  font-size: .8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  min-height: 44px;
+}
+.fiction-heading { align-items: flex-start; flex-direction: column; }
+.steps span { font-family: var(--font-body); font-size: .875rem; }
+footer > span { font-size: .75rem; color: #aaa69b; }
+footer .brand > span { font-size: 1.125rem; }
+footer .footer-end { font-size: .625rem; }
+
+@media (max-width: 1200px) {
+  header { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; }
+  nav { flex-wrap: wrap; justify-content: center; gap: .75rem 1.25rem; }
+}
+
+@media (max-width: 760px) {
+  header { justify-content: space-between; flex-wrap: nowrap; min-height: 90px; }
+  .brand > span { font-size: 1.0625rem; }
+  .brand small { font-size: .5625rem; }
+  .menu-toggle { min-height: 44px; font-size: .8125rem; }
+  nav { top: 100%; }
+  nav.open { gap: .5rem; font-size: 1rem; }
+  nav .soon { min-height: 44px; }
+  h1 { font-size: clamp(2.25rem, 8.5vw, 3.25rem); letter-spacing: -.035em; }
+  h2, .contact h2, .course-copy h2 { font-size: clamp(1.875rem, 7.6vw, 2.5rem); }
+  .lead { font-size: 1.25rem; }
+  .hero-content { width: 100%; }
+  .intro br.desktop { display: none; }
+  .hero-note { margin-top: 1rem; }
+  .ribbon { gap: .75rem; font-size: .875rem; }
+  .section-label { margin-bottom: 1.5rem; }
+  .fiction-heading h3 { font-size: 1.625rem; }
+  .segmented button { padding: .625rem .5rem; font-size: .75rem; }
+  .mode-description, .price-card p { min-height: 0; }
+  .price-note { min-height: 0; }
+  .price { font-size: 2rem; }
+  .business-prices > div { flex-wrap: wrap; gap: .25rem 1rem; }
+  .contact p { max-width: 36ch; }
+  .scroll-hint { font-size: .5625rem; letter-spacing: .06em; }
+  footer { align-items: flex-start; }
+  footer > span { font-size: .75rem; }
+}
+
+@media (max-width: 360px) {
+  .brand { gap: .375rem; }
+  .brand > span { font-size: .9375rem; }
+  .brand svg { width: 24px; }
+  .menu-toggle { padding-inline: .5rem; }
+  .segmented { flex-direction: column; }
+  .button { gap: .75rem; padding-inline: 1rem; }
+}
