@@ -110,7 +110,7 @@ body { background-image: radial-gradient(ellipse at 0 15%, #8e704a08, transparen
   box-shadow: 0 4px 16px #00000014, inset 0 1px 0 #ffffff0a;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
-.button > span {
+.button > .button-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -238,4 +238,57 @@ body { background-image: radial-gradient(ellipse at 0 15%, #8e704a08, transparen
 @media (prefers-reduced-motion: reduce) {
   .site-header nav > a::after { transition: none; }
   .button:hover { transform: none; }
+}
+
+/* Consistent vector iconography; labels remain visible at every breakpoint. */
+.icon { display: inline-block; vertical-align: middle; flex: 0 0 auto; width: 20px; height: 20px; }
+.button { gap: 12px; }
+.button > .button-vk { width: 21px; height: 21px; opacity: .9; }
+.button > .button-label { font-size: inherit; line-height: 1.5; flex: 1 1 auto; min-width: 0; text-align: left; }
+.button > .button-arrow { flex: 0 0 25px; }
+.button-arrow .icon { width: 16px; height: 16px; }
+.site-header nav > a:not(.button) { gap: 8px; }
+.site-header nav .icon { width: 17px; height: 17px; color: var(--gold); }
+.menu-toggle { align-items: center; justify-content: center; gap: 9px; }
+.menu-toggle .icon { width: 18px; height: 18px; }
+.text-link { align-items: center; gap: 10px; }
+.text-link > .icon:first-child { width: 20px; height: 20px; }
+.text-link > .icon:last-child { width: 16px; height: 16px; margin-left: 4px; }
+.consultation-mark { display: flex; align-items: center; justify-content: center; width: 62px; height: 62px; border: 1px solid var(--line); border-radius: 50%; background: #cfb18106; }
+.consultation-mark .icon { width: 28px; height: 28px; color: var(--gold); opacity: 1; }
+.eyebrow > .icon { width: 19px; height: 19px; }
+.segmented button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+.segmented .icon { width: 17px; height: 17px; }
+.card-topline { display: flex; align-items: center; justify-content: space-between; color: var(--gold); }
+.card-topline > .icon { width: 25px; height: 25px; opacity: .75; }
+.steps .step-marker { display: inline-flex; align-items: center; gap: 10px; }
+.steps .step-marker > .icon { width: 19px; height: 19px; }
+.steps .step-marker > span { font-size: .75rem; }
+.social-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 800px; margin: 36px auto 0; text-align: left; }
+.social-card { display: flex; align-items: center; gap: 15px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #cfb18104; transition: border-color .2s ease, background .2s ease; }
+.social-card:hover { border-color: #cfb18166; background: #cfb1810a; }
+.social-card-logo { display: inline-flex; justify-content: center; align-items: center; width: 43px; height: 43px; flex-shrink: 0; border: 1px solid #cfb18138; border-radius: 10px; color: var(--gold); background: #cfb18107; }
+.social-card-logo .icon { width: 24px; height: 24px; }
+.social-card-copy { display: flex; flex: 1; flex-direction: column; min-width: 0; gap: 4px; }
+.social-card-copy strong { font-size: .875rem; font-weight: 500; line-height: 1.5; }
+.social-card-copy small { font-size: .75rem; color: var(--muted); line-height: 1.6; }
+.social-card > .icon { width: 17px; height: 17px; color: var(--gold); }
+.footer-social { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--gold); font-size: .8125rem; }
+.footer-social > .icon:last-child { width: 14px; height: 14px; }
+@media (max-width: 1150px) and (min-width: 761px) { .consultation-mark { display: none; } }
+@media (max-width: 760px) {
+  .menu-toggle { display: inline-flex; }
+  .consultation-mark { display: none; }
+  .social-links { grid-template-columns: 1fr; max-width: 420px; margin-top: 30px; gap: 12px; }
+  .social-card { padding: 18px 16px; gap: 12px; }
+  .steps .step-marker { flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 4px; }
+  .steps .step-marker > span { margin-top: 0; }
+  .hero-actions .button { gap: 10px; }
+  .segmented button { gap: 6px; }
+  .segmented .icon { width: 16px; height: 16px; }
+}
+@media (max-width: 360px) {
+  .button { padding-inline: 12px; gap: 8px; }
+  .button > .button-vk { width: 18px; height: 18px; }
+  .button > .button-arrow { flex-basis: 20px; width: 20px; height: 20px; }
 }

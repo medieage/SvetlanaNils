@@ -54,8 +54,8 @@
 @media (prefers-reduced-motion: no-preference) {
   .hero::before { animation: library-light 12s ease-in-out 3; }
   .hero-dust i { animation-name: drifting-ink; animation-duration: 8s; animation-timing-function: ease-in-out; animation-iteration-count: 3; }
-  .button > span { transition: transform .25s ease, background .25s ease; }
-  .button:hover > span { transform: translate(2px, -2px); background: #ffffff13; }
+  .button > .button-arrow { transition: transform .25s ease, background .25s ease; }
+  .button:hover > .button-arrow { transform: translate(2px, -2px); background: #ffffff13; }
   .scroll-hint > span { animation: page-cue 2.5s ease-in-out 3; }
   .site-header nav.open { animation: menu-enter .25s ease-out; }
 }
