@@ -292,3 +292,21 @@ body { background-image: radial-gradient(ellipse at 0 15%, #8e704a08, transparen
   .button > .button-vk { width: 18px; height: 18px; }
   .button > .button-arrow { flex-basis: 20px; width: 20px; height: 20px; }
 }
+
+/* Official VK feed; its iframe keeps its native layout and interactions. */
+.vk-journal { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 70px; align-items: start; border-top: 1px solid var(--line); }
+.journal-intro { padding-top: 22px; }
+.journal-intro p { max-width: 37ch; font-size: 1rem; }
+.vk-feed-panel { min-width: 0; overflow: hidden; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #191916; }
+.vk-feed-heading { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); color: var(--gold); }
+.vk-feed-heading > span { flex: 1; font-size: .9375rem; }
+.vk-feed-heading small { color: var(--muted); font-size: .6875rem; }
+.vk-feed-status { color: var(--muted); font-size: .8125rem; line-height: 1.7; padding-top: 15px; min-height: 37px; }
+.vk-feed-host { width: 100% !important; min-height: 600px; margin-top: 16px; }
+.vk-feed-panel[data-status="error"] .vk-feed-host:empty { min-height: 0; margin-top: 0; }
+.vk-feed-host iframe { display: block; max-width: 100%; border: 0; }
+.vk-feed-fallback { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; margin-top: 14px; color: var(--gold); font-size: .8125rem; border-top: 1px solid var(--line); padding-top: 12px; }
+.vk-feed-fallback:hover { color: var(--white); }
+@media (max-width: 1000px) { .vk-journal { gap: 30px; } }
+@media (max-width: 760px) { .vk-journal { grid-template-columns: 1fr; gap: 30px; } .journal-intro { padding-top: 0; } .vk-feed-panel { padding: 15px; } }
+@media print { .vk-feed-host { display: none; } }
