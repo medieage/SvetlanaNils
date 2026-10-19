@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Atmosphere from './components/Atmosphere';
+import { structuredData } from './seo';
 
 const VK = 'https://vk.ru/svetikanilsla';
 function Contact({ children = 'Обсудить вашу историю', className = '' }: {children?: React.ReactNode; className?: string}) {
@@ -27,6 +28,7 @@ export default function Home() {
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [menu]);
   return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
     <Atmosphere />
     <header className="site-header"><a href="#" className="brand" aria-label="Светлана Нильс — на главную"><Feather/><span>Светлана Нильс<small>ПЕРО ФЕНИКСА</small></span></a>
       <Contact className="header-consultation">Консультация · 2 500 ₽</Contact>
